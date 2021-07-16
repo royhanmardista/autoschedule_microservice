@@ -2,9 +2,6 @@ from ortools.sat.python import cp_model
 
 def generateSchedule(days, shiftSlots, staff_dict):
 
-    # print(days)
-    # print(staff_dict)
-
     shifts_data = []
     for staff in range(len(staff_dict)):
         shifts_data.append([])

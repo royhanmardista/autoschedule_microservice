@@ -4,6 +4,7 @@ WORKDIR /autoschedule_microservice
 COPY ./app/requirements.txt /autoschedule_microservice/requirements.txt
 RUN pip3 install -r requirements.txt
 
+RUN python3 -m pip install --upgrade --user ortools
 RUN pip3 install wheel
 RUN pip3 install gunicorn
 
