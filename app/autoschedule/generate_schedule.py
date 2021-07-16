@@ -4,13 +4,13 @@ from google.protobuf import json_format
 
 import grpc
 
-import autoschedule_pb2 as autoscheduleMessage
-import autoschedule_pb2_grpc as autoscheduleService
-from model import generateSchedule
+import autoschedule_pb2 as autoschedule_message
+import autoschedule_pb2_grpc as autoschedule_service
+from model import generate_schedule
 
 def convert_schedule_to_buff(schedules):
   for key, value in schedules.items():
-      schedules[key] = autoscheduleMessage.Schedule(schedule = value)
+      schedules[key] = autoschedule_message.Schedule(schedule = value)
   return schedules
 
 def convert_days_to_list(days):
@@ -18,11 +18,11 @@ def convert_days_to_list(days):
       days[key] = list(range(value['start'], value['end']))
   return days
 
-class AutoSchedule(autoscheduleService.AutoScheduleServicer):
+class AutoSchedule(autoschedule_service.AutoScheduleServicer):
     def GenerateSchedule(self, request, context):
-        generateScheduleInput = json_format.MessageToDict(request)
-        days = convert_days_to_list(generateScheduleInput['days'])
-        shiftSlots = generateScheduleInput['shiftSlots']
-        staffDicts = generateScheduleInput['staffDicts']
-        schedules = generateSchedule(days, shiftSlots, staffDicts)
-        return autoscheduleMessage.GenerateScheduleOutput(schedules = convert_schedule_to_buff(schedules))
+        generate_schedule_nput = json_format.MessageToDict(request)
+        days = convert_days_to_list(generate_schedule_nput['days'])
+        shiftSlots = generate_schedule_nput['shiftSlots']
+        staffDicts = generate_schedule_nput['staffDicts']
+        schedules = generate_schedule(days, shiftSlots, staffDicts)
+        return autoschedule_message.GenerateScheduleOutput(schedules = convert_schedule_to_buff(schedules))
