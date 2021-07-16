@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package autoschedule;
+
+// The AutoSchedule service definition.
+service AutoSchedule {
+  rpc GenerateSchedule (GenerateScheduleInput) returns (GenerateScheduleOutput) {}
+}
+
+/** 
+  we use uint32 since protobuf will turn it into JSON string if we use uint64, and also uint32 will cover the input range
+  https://developers.google.com/protocol-buffers/docs/proto3#json\
+  optional flag will allow 0 value to be sent by protobuf since by default 0 is ignored
+**/
+message Day {
+  optional uint32 start = 1;
+  uint32 end = 2;
+}
+
+message ShiftSlot {
+  optional uint32 shiftSlotId = 1;
+  optional uint32 start = 2;
+  optional uint32 end = 3;
+  uint32 hours = 4;
+}
+
+message StaffDict {
+  string userId = 1;
+  uint32 dailyOtLimit = 2;
+  uint32 weeklyOtLimit = 3;
+  uint32 score = 4;
+  optional uint32 fulltime = 5;
+}
+
+message GenerateScheduleInput {
+  map<uint32, Day> days = 1;
+  map<uint32, ShiftSlot> shiftSlots = 2;
+  map<uint32, StaffDict> staffDicts = 3;
+}
+
+message Schedule {
+   repeated string schedule = 1;
+}
+
+message GenerateScheduleOutput {
+  map<string, Schedule> schedules = 1;
+}

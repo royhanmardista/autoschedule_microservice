@@ -1,1 +1,11 @@
 # autoschedule_microservice
+
+## Set up for local development
+- Make sure you run kraken on docker, since this microservice will attach it network to it. You can check the network using `docker network ls` and see if kraken_default is present
+- since or-tool is too big I don't push it on the github, you must copy your or-tool folder and put it in inside app directory
+- go to folder docker/developement
+- run $ docker-compose up
+- to run with the node client go to client folder
+- install dependency 
+- run tsc main.ts
+- run node main.js
