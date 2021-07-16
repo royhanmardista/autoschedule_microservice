@@ -16,3 +16,5 @@ networks:
   autoschedule-network-proxy:
     external:
       name: kraken-container-network
+      # use this instead if you still use the old kraken docker-compose
+      #name: kraken_default
