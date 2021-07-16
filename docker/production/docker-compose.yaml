@@ -1,0 +1,18 @@
+version: "3.5"
+services:
+  autoschedule_microservice:
+    build:
+      context: "../.."
+      dockerfile: "./docker/development/Dockerfile"
+    ports:
+      - "50051:50051"
+    networks:
+      - autoschedule-network-proxy
+    env_file:
+      - ../../.env
+    volumes:
+      - ../../app:/autoschedule_microservice:z
+networks:
+  autoschedule-network-proxy:
+    external:
+      name: kraken_default
