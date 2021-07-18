@@ -8,5 +8,5 @@ RUN python3 -m pip install --upgrade --user ortools
 COPY .env /autoschedule_microservice/.env
 COPY ./app /autoschedule_microservice
 
-CMD ["python3", "server.py"]
+CMD ["python3", "-u" ,"server.py"]
 # CMD ["ping", "localhost"]

@@ -18,6 +18,9 @@ def convert_days_to_list(days):
       days[key] = list(range(value['start'], value['end']))
   return days
 
+def add_service_to_server(server):
+  autoschedule_service.add_AutoScheduleServicer_to_server(AutoSchedule(), server)
+
 class AutoSchedule(autoschedule_service.AutoScheduleServicer):
     def GenerateSchedule(self, request, context):
         generate_schedule_nput = json_format.MessageToDict(request)
