@@ -1,7 +1,11 @@
 from ortools.sat.python import cp_model
+import logging
+
+model_logger = logging.getLogger('model')
 
 def generate_schedule(days, shiftSlots, staff_dict):
 
+    model_logger.info('Model is running')
     shifts_data = []
     for staff in range(len(staff_dict)):
         shifts_data.append([])
