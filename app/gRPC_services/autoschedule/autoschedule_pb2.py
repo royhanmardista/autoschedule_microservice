@@ -19,42 +19,10 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x12\x61utoschedule.proto\x12\x0c\x61utoschedule\"\x18\n\x05Input\x12\x0f\n\x07message\x18\x01 \x01(\t\"0\n\x03\x44\x61y\x12\x12\n\x05start\x18\x01 \x01(\rH\x00\x88\x01\x01\x12\x0b\n\x03\x65nd\x18\x02 \x01(\rB\x08\n\x06_start\"|\n\tShiftSlot\x12\x18\n\x0bshiftSlotId\x18\x01 \x01(\rH\x00\x88\x01\x01\x12\x12\n\x05start\x18\x02 \x01(\rH\x01\x88\x01\x01\x12\x10\n\x03\x65nd\x18\x03 \x01(\rH\x02\x88\x01\x01\x12\r\n\x05hours\x18\x04 \x01(\rB\x0e\n\x0c_shiftSlotIdB\x08\n\x06_startB\x06\n\x04_end\"{\n\tStaffDict\x12\x0e\n\x06userId\x18\x01 \x01(\t\x12\x14\n\x0c\x64\x61ilyOtLimit\x18\x02 \x01(\r\x12\x15\n\rweeklyOtLimit\x18\x03 \x01(\r\x12\r\n\x05score\x18\x04 \x01(\r\x12\x15\n\x08\x66ulltime\x18\x05 \x01(\rH\x00\x88\x01\x01\x42\x0b\n\t_fulltime\"\xbe\x03\n\x15GenerateScheduleInput\x12;\n\x04\x64\x61ys\x18\x01 \x03(\x0b\x32-.autoschedule.GenerateScheduleInput.DaysEntry\x12G\n\nshiftSlots\x18\x02 \x03(\x0b\x32\x33.autoschedule.GenerateScheduleInput.ShiftSlotsEntry\x12G\n\nstaffDicts\x18\x03 \x03(\x0b\x32\x33.autoschedule.GenerateScheduleInput.StaffDictsEntry\x1a>\n\tDaysEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12 \n\x05value\x18\x02 \x01(\x0b\x32\x11.autoschedule.Day:\x02\x38\x01\x1aJ\n\x0fShiftSlotsEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12&\n\x05value\x18\x02 \x01(\x0b\x32\x17.autoschedule.ShiftSlot:\x02\x38\x01\x1aJ\n\x0fStaffDictsEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12&\n\x05value\x18\x02 \x01(\x0b\x32\x17.autoschedule.StaffDict:\x02\x38\x01\"\x1c\n\x08Schedule\x12\x10\n\x08schedule\x18\x01 \x03(\t\"\xaa\x01\n\x16GenerateScheduleOutput\x12\x46\n\tschedules\x18\x01 \x03(\x0b\x32\x33.autoschedule.GenerateScheduleOutput.SchedulesEntry\x1aH\n\x0eSchedulesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.autoschedule.Schedule:\x02\x38\x01\x32o\n\x0c\x41utoSchedule\x12_\n\x10GenerateSchedule\x12#.autoschedule.GenerateScheduleInput\x1a$.autoschedule.GenerateScheduleOutput\"\x00\x32\x44\n\nHelloWorld\x12\x36\n\x08SayHello\x12\x13.autoschedule.Input\x1a\x13.autoschedule.Input\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\x12\x61utoschedule.proto\x12\x0c\x61utoschedule\"0\n\x03\x44\x61y\x12\x12\n\x05start\x18\x01 \x01(\rH\x00\x88\x01\x01\x12\x0b\n\x03\x65nd\x18\x02 \x01(\rB\x08\n\x06_start\"|\n\tShiftSlot\x12\x18\n\x0bshiftSlotId\x18\x01 \x01(\rH\x00\x88\x01\x01\x12\x12\n\x05start\x18\x02 \x01(\rH\x01\x88\x01\x01\x12\x10\n\x03\x65nd\x18\x03 \x01(\rH\x02\x88\x01\x01\x12\r\n\x05hours\x18\x04 \x01(\rB\x0e\n\x0c_shiftSlotIdB\x08\n\x06_startB\x06\n\x04_end\"{\n\tStaffDict\x12\x0e\n\x06userId\x18\x01 \x01(\t\x12\x14\n\x0c\x64\x61ilyOtLimit\x18\x02 \x01(\r\x12\x15\n\rweeklyOtLimit\x18\x03 \x01(\r\x12\r\n\x05score\x18\x04 \x01(\r\x12\x15\n\x08\x66ulltime\x18\x05 \x01(\rH\x00\x88\x01\x01\x42\x0b\n\t_fulltime\"\xbe\x03\n\x15GenerateScheduleInput\x12;\n\x04\x64\x61ys\x18\x01 \x03(\x0b\x32-.autoschedule.GenerateScheduleInput.DaysEntry\x12G\n\nshiftSlots\x18\x02 \x03(\x0b\x32\x33.autoschedule.GenerateScheduleInput.ShiftSlotsEntry\x12G\n\nstaffDicts\x18\x03 \x03(\x0b\x32\x33.autoschedule.GenerateScheduleInput.StaffDictsEntry\x1a>\n\tDaysEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12 \n\x05value\x18\x02 \x01(\x0b\x32\x11.autoschedule.Day:\x02\x38\x01\x1aJ\n\x0fShiftSlotsEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12&\n\x05value\x18\x02 \x01(\x0b\x32\x17.autoschedule.ShiftSlot:\x02\x38\x01\x1aJ\n\x0fStaffDictsEntry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12&\n\x05value\x18\x02 \x01(\x0b\x32\x17.autoschedule.StaffDict:\x02\x38\x01\"\x1c\n\x08Schedule\x12\x10\n\x08schedule\x18\x01 \x03(\t\"\xaa\x01\n\x16GenerateScheduleOutput\x12\x46\n\tschedules\x18\x01 \x03(\x0b\x32\x33.autoschedule.GenerateScheduleOutput.SchedulesEntry\x1aH\n\x0eSchedulesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.autoschedule.Schedule:\x02\x38\x01\x32o\n\x0c\x41utoSchedule\x12_\n\x10GenerateSchedule\x12#.autoschedule.GenerateScheduleInput\x1a$.autoschedule.GenerateScheduleOutput\"\x00\x62\x06proto3'
 )
 
 
-
-
-_INPUT = _descriptor.Descriptor(
-  name='Input',
-  full_name='autoschedule.Input',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='message', full_name='autoschedule.Input.message', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=36,
-  serialized_end=60,
-)
 
 
 _DAY = _descriptor.Descriptor(
@@ -96,8 +64,8 @@ _DAY = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=62,
-  serialized_end=110,
+  serialized_start=36,
+  serialized_end=84,
 )
 
 
@@ -164,8 +132,8 @@ _SHIFTSLOT = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=112,
-  serialized_end=236,
+  serialized_start=86,
+  serialized_end=210,
 )
 
 
@@ -229,8 +197,8 @@ _STAFFDICT = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=238,
-  serialized_end=361,
+  serialized_start=212,
+  serialized_end=335,
 )
 
 
@@ -268,8 +236,8 @@ _GENERATESCHEDULEINPUT_DAYSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=596,
-  serialized_end=658,
+  serialized_start=570,
+  serialized_end=632,
 )
 
 _GENERATESCHEDULEINPUT_SHIFTSLOTSENTRY = _descriptor.Descriptor(
@@ -306,8 +274,8 @@ _GENERATESCHEDULEINPUT_SHIFTSLOTSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=660,
-  serialized_end=734,
+  serialized_start=634,
+  serialized_end=708,
 )
 
 _GENERATESCHEDULEINPUT_STAFFDICTSENTRY = _descriptor.Descriptor(
@@ -344,8 +312,8 @@ _GENERATESCHEDULEINPUT_STAFFDICTSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=736,
-  serialized_end=810,
+  serialized_start=710,
+  serialized_end=784,
 )
 
 _GENERATESCHEDULEINPUT = _descriptor.Descriptor(
@@ -389,8 +357,8 @@ _GENERATESCHEDULEINPUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=364,
-  serialized_end=810,
+  serialized_start=338,
+  serialized_end=784,
 )
 
 
@@ -421,8 +389,8 @@ _SCHEDULE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=812,
-  serialized_end=840,
+  serialized_start=786,
+  serialized_end=814,
 )
 
 
@@ -460,8 +428,8 @@ _GENERATESCHEDULEOUTPUT_SCHEDULESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=941,
-  serialized_end=1013,
+  serialized_start=915,
+  serialized_end=987,
 )
 
 _GENERATESCHEDULEOUTPUT = _descriptor.Descriptor(
@@ -491,8 +459,8 @@ _GENERATESCHEDULEOUTPUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=843,
-  serialized_end=1013,
+  serialized_start=817,
+  serialized_end=987,
 )
 
 _DAY.oneofs_by_name['_start'].fields.append(
@@ -522,7 +490,6 @@ _GENERATESCHEDULEINPUT.fields_by_name['staffDicts'].message_type = _GENERATESCHE
 _GENERATESCHEDULEOUTPUT_SCHEDULESENTRY.fields_by_name['value'].message_type = _SCHEDULE
 _GENERATESCHEDULEOUTPUT_SCHEDULESENTRY.containing_type = _GENERATESCHEDULEOUTPUT
 _GENERATESCHEDULEOUTPUT.fields_by_name['schedules'].message_type = _GENERATESCHEDULEOUTPUT_SCHEDULESENTRY
-DESCRIPTOR.message_types_by_name['Input'] = _INPUT
 DESCRIPTOR.message_types_by_name['Day'] = _DAY
 DESCRIPTOR.message_types_by_name['ShiftSlot'] = _SHIFTSLOT
 DESCRIPTOR.message_types_by_name['StaffDict'] = _STAFFDICT
@@ -530,13 +497,6 @@ DESCRIPTOR.message_types_by_name['GenerateScheduleInput'] = _GENERATESCHEDULEINP
 DESCRIPTOR.message_types_by_name['Schedule'] = _SCHEDULE
 DESCRIPTOR.message_types_by_name['GenerateScheduleOutput'] = _GENERATESCHEDULEOUTPUT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-Input = _reflection.GeneratedProtocolMessageType('Input', (_message.Message,), {
-  'DESCRIPTOR' : _INPUT,
-  '__module__' : 'autoschedule_pb2'
-  # @@protoc_insertion_point(class_scope:autoschedule.Input)
-  })
-_sym_db.RegisterMessage(Input)
 
 Day = _reflection.GeneratedProtocolMessageType('Day', (_message.Message,), {
   'DESCRIPTOR' : _DAY,
@@ -625,8 +585,8 @@ _AUTOSCHEDULE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1015,
-  serialized_end=1126,
+  serialized_start=989,
+  serialized_end=1100,
   methods=[
   _descriptor.MethodDescriptor(
     name='GenerateSchedule',
@@ -642,31 +602,5 @@ _AUTOSCHEDULE = _descriptor.ServiceDescriptor(
 _sym_db.RegisterServiceDescriptor(_AUTOSCHEDULE)
 
 DESCRIPTOR.services_by_name['AutoSchedule'] = _AUTOSCHEDULE
-
-
-_HELLOWORLD = _descriptor.ServiceDescriptor(
-  name='HelloWorld',
-  full_name='autoschedule.HelloWorld',
-  file=DESCRIPTOR,
-  index=1,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=1128,
-  serialized_end=1196,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='SayHello',
-    full_name='autoschedule.HelloWorld.SayHello',
-    index=0,
-    containing_service=None,
-    input_type=_INPUT,
-    output_type=_INPUT,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_HELLOWORLD)
-
-DESCRIPTOR.services_by_name['HelloWorld'] = _HELLOWORLD
 
 # @@protoc_insertion_point(module_scope)
