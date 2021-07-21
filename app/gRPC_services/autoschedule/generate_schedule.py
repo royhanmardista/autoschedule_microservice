@@ -23,9 +23,9 @@ def add_service_to_server(server):
 
 class AutoSchedule(autoschedule_service.AutoScheduleServicer):
     def GenerateSchedule(self, request, context):
-        generate_schedule_nput = json_format.MessageToDict(request)
-        days = convert_days_to_list(generate_schedule_nput['days'])
-        shiftSlots = generate_schedule_nput['shiftSlots']
-        staffDicts = generate_schedule_nput['staffDicts']
+        generate_schedule_input = json_format.MessageToDict(request)
+        days = convert_days_to_list(generate_schedule_input['days'])
+        shiftSlots = generate_schedule_input['shiftSlots']
+        staffDicts = generate_schedule_input['staffDicts']
         schedules = generate_schedule(days, shiftSlots, staffDicts)
         return autoschedule_message.GenerateScheduleOutput(schedules = convert_schedule_to_buff(schedules))
