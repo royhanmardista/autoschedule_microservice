@@ -1,15 +1,15 @@
 import os
 import sys
 import logging
-from dotenv import load_dotenv
-from concurrent import futures
-from google.protobuf import json_format
 
 import grpc
+from concurrent import futures
+from dotenv import load_dotenv
+from google.protobuf import json_format
 
 load_dotenv()
 port = os.getenv('PORT')
-sys.path.append('./autoschedule')
+sys.path.append('./gRPC_services/autoschedule')
 from generate_schedule import add_service_to_server 
 
 def serve():

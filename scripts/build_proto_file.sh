@@ -1,1 +1,1 @@
-python3 -m grpc_tools.protoc -I./../protos --python_out=./../app/autoschedule --grpc_python_out=./../app/autoschedule ./../protos/autoschedule.proto
+python3 -m grpc_tools.protoc -I./../protos --python_out=./../app/gRPC_services/autoschedule --grpc_python_out=./../app/gRPC_services/autoschedule ./../protos/autoschedule.proto
