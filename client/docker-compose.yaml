@@ -1,19 +1,19 @@
 version: "3.5"
 services:
-  autoschedule-microservice:
+  autoschedule-microservice-client:
     build:
       context: "../"
-      dockerfile: "./docker/Dockerfile"
+      dockerfile: "./client/Dockerfile"
     ports:
-      - "50051:50051"
+      - "8091:8091"
     networks:
-      - autoschedule-network-proxy
+      - autoschedule-network-proxy-client
     env_file:
       - ../.env
     volumes:
-      - ../app:/autoschedule_microservice:z
+      - ../client:/autoschedule_microservice_client:z
 networks:
-  autoschedule-network-proxy:
+  autoschedule-network-proxy-client:
     external:
       name: kraken_default
       # use this instead if you still use the old kraken docker-compose
