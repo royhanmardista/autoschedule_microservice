@@ -1,0 +1,12 @@
+version: "3.5"
+services:
+  autoschedule-microservice:
+    build:
+      context: "../"
+      dockerfile: "./deployment/Dockerfile"
+    ports:
+      - "8081:50051"
+    env_file:
+      - ../.env
+    volumes:
+      - ../app:/autoschedule_microservice:z
